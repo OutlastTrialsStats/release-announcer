@@ -3,10 +3,10 @@ export const DEFAULT_COLOR = 0xef4444;
 
 const DESCRIPTION_LIMIT = 4000;
 
-export const SHOWN_SECTIONS = [
-  { heading: 'Features', label: 'Features', type: 'feat' },
-  { heading: 'Bug Fixes', label: 'Bug Fixes', type: 'fix' },
-  { heading: 'Performance Improvements', label: 'Performance Improvements', type: 'perf' },
+const SHOWN_SECTIONS = [
+  { heading: 'Features', label: 'Features' },
+  { heading: 'Bug Fixes', label: 'Bug Fixes' },
+  { heading: 'Performance Improvements', label: 'Performance Improvements' },
 ];
 
 const COMMIT_REFERENCE = /\s*\(\[[0-9a-f]{7,40}\]\([^)]*\)\)/g;

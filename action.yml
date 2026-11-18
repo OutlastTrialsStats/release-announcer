@@ -14,14 +14,18 @@ inputs:
     description: Release tag, e.g. v1.2.3
     required: true
   source:
-    description: "release: read the GitHub release notes. commits: build notes from commits since the previous tag."
+    description: "changelog: read this version's section of CHANGELOG.md on the default branch. release: read the GitHub release notes."
     required: false
-    default: release
+    default: changelog
+  dry-run:
+    description: "true: post nothing, write a preview to the job summary"
+    required: false
+    default: 'false'
   repository:
     description: owner/name of the repository
     required: false
   github-token:
-    description: Token used to read the GitHub release
+    description: Token used to read CHANGELOG.md or the GitHub release
     required: false
     default: ${{ github.token }}
   color:
