@@ -98,7 +98,7 @@ describe('buildDiscordPayload', () => {
 
   it('drops duplicate entries', () => {
     const notes = '### Bug Fixes\n\n* fix a thing ([aaaaaaa](x))\n* fix a thing ([bbbbbbb](y))\n';
-    assert.equal(descriptionOf(notes), '**Fixes**\n• Fix a thing');
+    assert.equal(descriptionOf(notes), '**Bug Fixes**\n- Fix a thing');
   });
 
   it('truncates long notes on a line boundary and links the release', () => {
