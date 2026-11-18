@@ -1,0 +1,32 @@
+name: Release Announcer
+description: Post a clean release changelog to Discord as an embed
+inputs:
+  webhook-url:
+    description: Discord webhook URL. When empty, the step is skipped.
+    required: false
+  product:
+    description: Product name, used as "<product> Update vX.Y.Z"
+    required: true
+  url:
+    description: Link for the embed title
+    required: false
+  tag:
+    description: Release tag, e.g. v1.2.3
+    required: true
+  source:
+    description: "release: read the GitHub release notes. commits: build notes from commits since the previous tag."
+    required: false
+    default: release
+  repository:
+    description: owner/name of the repository
+    required: false
+  github-token:
+    description: Token used to read the GitHub release
+    required: false
+    default: ${{ github.token }}
+  color:
+    description: Embed color as a number, e.g. 0xef4444
+    required: false
+runs:
+  using: node24
+  main: src/main.mjs
