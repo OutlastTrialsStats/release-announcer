@@ -17,15 +17,15 @@ describe('notesFromSubjects', () => {
     assert.equal(
       buildDescription(notes),
       [
-        '**New**',
-        '• Send and view images in request threads',
-        '• Drop the old api',
+        '**Features**',
+        '- Send and view images in request threads',
+        '- Drop the old api',
         '',
-        '**Fixes**',
-        '• Keep the leaderboard sorted',
+        '**Bug Fixes**',
+        '- Keep the leaderboard sorted',
         '',
-        '**Performance**',
-        '• Cache player lookups',
+        '**Performance Improvements**',
+        '- Cache player lookups',
       ].join('\n'),
     );
   });

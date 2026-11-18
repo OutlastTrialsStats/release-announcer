@@ -4,9 +4,9 @@ export const DEFAULT_COLOR = 0xef4444;
 const DESCRIPTION_LIMIT = 4000;
 
 export const SHOWN_SECTIONS = [
-  { heading: 'Features', label: 'New', type: 'feat' },
-  { heading: 'Bug Fixes', label: 'Fixes', type: 'fix' },
-  { heading: 'Performance Improvements', label: 'Performance', type: 'perf' },
+  { heading: 'Features', label: 'Features', type: 'feat' },
+  { heading: 'Bug Fixes', label: 'Bug Fixes', type: 'fix' },
+  { heading: 'Performance Improvements', label: 'Performance Improvements', type: 'perf' },
 ];
 
 const COMMIT_REFERENCE = /\s*\(\[[0-9a-f]{7,40}\]\([^)]*\)\)/g;
@@ -58,7 +58,7 @@ export function buildDescription(notes) {
   for (const { heading, label } of SHOWN_SECTIONS) {
     const entries = [...new Set((sections.get(heading) ?? []).map(cleanEntry).filter(Boolean))];
     if (entries.length === 0) continue;
-    blocks.push([`**${label}**`, ...entries.map((entry) => `• ${entry}`)].join('\n'));
+    blocks.push([`**${label}**`, ...entries.map((entry) => `- ${entry}`)].join('\n'));
   }
   return blocks.length === 0 ? MAINTENANCE_NOTE : blocks.join('\n\n');
 }

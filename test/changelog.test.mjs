@@ -78,15 +78,15 @@ describe('buildDiscordPayload', () => {
     assert.equal(
       descriptionOf(RELEASE_0_7_0),
       [
-        '**New**',
-        '• Add a setting to turn the watermark off',
+        '**Features**',
+        '- Add a setting to turn the watermark off',
         '',
-        '**Fixes**',
-        '• Add a device profile that keeps phones off the high texture tier',
-        '• Default the texture quality to auto so phones no longer load high textures',
+        '**Bug Fixes**',
+        '- Add a device profile that keeps phones off the high texture tier',
+        '- Default the texture quality to auto so phones no longer load high textures',
         '',
-        '**Performance**',
-        '• Render on demand and update shadows only when needed',
+        '**Performance Improvements**',
+        '- Render on demand and update shadows only when needed',
       ].join('\n'),
     );
   });
